@@ -5,15 +5,15 @@ Beginner friendly and body diverse workout app. MERN Stack.
 Build a workout app for people who are new to strength training and the gym. Users can work through 8 weeks of workouts, including video demos of exercises and technique tips. As well as read through Training Tips section for explanations of equipment, terminology and other FAQs.
 
 # MVP
-Full CRUD for User Profile
-Admin only functionality for workouts
-Log history or workouts for user
-Make "create new" user form and submit to database
-Create a "show" page displaying each workout and details
+- Full CRUD for User Profile
+- Admin only functionality for workouts
+- Log history or workouts for user
+- Make "create new" user form and submit to database
+- Create a "show" page displaying each workout and details
 
 # Stretch Goals
-Stripe payment API
-Chat w/ coach using Socket.io
+- Stripe payment API
+- Chat w/ coach using Socket.io
 
 # Front-end
 React and Tailwind/Css for styling.
@@ -22,27 +22,27 @@ React and Tailwind/Css for styling.
 Express, Mongoose
 
 # List of Mongoose models and their properties
-User username/email: String
-password: String
+- User username/email: String
+- User password: String
 
-# Profile
-First name: String
-Last Name: String
+# User Profile
+- First name: String
+- Last Name: String
 
 # Workout Details
-Exercise: String
-Sets: Number
-Reps: Number
-Cues: String
-User Notes: String
+- Exercise: String
+- Sets: Number
+- Reps: Number
+- Cues: String
+- User Notes: String
 
 # User Stories
-As a user I want to be able to create a user profile
-As a user I want to be able to edit my profile
-As a user I want to see my workouts displayed on index page
-As a user I want to be able mark "complete" when workouts are done
-As a user I want to see my past history of exercises, weights used, notes, etc
-As a user I want to be able to delete my profile
+- As a user I want to be able to create a user profile
+- As a user I want to be able to edit my profile
+- As a user I want to see my workouts displayed on index page
+- As a user I want to be able mark "complete" when workouts are done
+- As a user I want to see my past history of exercises, weights used, notes, etc
+- As a user I want to be able to delete my profile
 
 # Stretch Stories
 As a user I want to be able to chat with my coach using Socket.io if I have questions
