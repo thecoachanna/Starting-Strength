@@ -48,7 +48,9 @@ As a user I want to be able to delete my profile
 As a user I want to be able to chat with my coach using Socket.io if I have questions
 
 # Wireframes
-![Untitled (1)](https://user-images.githubusercontent.com/99093454/188275305-d48abd6d-7515-4da9-8b95-15898cad6582.png)
-![Untitled (2)](https://user-images.githubusercontent.com/99093454/188275308-5a622981-3659-4a40-9aab-19a84fc5a6a8.png)
 ![Copy of Untitled](https://user-images.githubusercontent.com/99093454/188275297-05e69684-3231-48d8-bf11-61f40fef55e8.png)
 ![Untitled](https://user-images.githubusercontent.com/99093454/188275302-31a4f33a-abf2-4f89-8a2c-131bf21e4aeb.png)
+![Untitled (2)](https://user-images.githubusercontent.com/99093454/188275308-5a622981-3659-4a40-9aab-19a84fc5a6a8.png)
+![Untitled (1)](https://user-images.githubusercontent.com/99093454/188275305-d48abd6d-7515-4da9-8b95-15898cad6582.png)
+
+
