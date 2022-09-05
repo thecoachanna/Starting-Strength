@@ -1,4 +1,4 @@
-# StrongFoundations
+# Starting Strength
 Beginner friendly and body diverse workout app. MERN Stack.
 
 # Your project idea
