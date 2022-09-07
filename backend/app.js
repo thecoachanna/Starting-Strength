@@ -7,7 +7,8 @@ const PORT = 4000
 const cors = require('cors')
 const { MessagingResponse } = require('twilio').twiml;
 
-const workoutRoutes = require('./routes/workoutRoutes')
+const workoutRoutes = require('./routes/workoutRoutes');
+const Exercise = require('./models/Exercise');
 
 // Twilio text messaging
 app.post('/sms', (req, res) => {
@@ -36,6 +37,7 @@ app.use('/workouts', workoutRoutes)
 app.get('/', (req, res) => {
     res.json('Welcome to Starting Stength!')
 })
+
 
 app.listen(PORT, ()=> {
     console.log(`Listening on PORT: ${PORT}`)

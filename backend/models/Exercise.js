@@ -12,8 +12,7 @@ const exerciseSchema = new mongoose.Schema({
     },   
     cues: {
         type: String,
-    },
-    
+    },    
 })
 
 const Exercise = mongoose.model('Exercise', exerciseSchema);

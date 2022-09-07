@@ -188,9 +188,73 @@ const exercise = [
         video: 'https://youtube.com/shorts/5LQV2rlTc0k',
         cues: '- back stays flat, should feel abs engaged - only straightening and bending elbow'        
     },
-
+    {
+        name: 'Heel Clicks',
+        video: 'https://youtube.com/shorts/0irYeIio9gs',
+        cues: '- reach butt back and arms forward - back stays flat'        
+    },
+    {
+        name: 'Hip Hinge w/ Reach',
+        video: 'https://youtube.com/shorts/tnkXfuaeycM?feature=share',
+        cues: '- back stays flat, should feel abs engaged - only straightening and bending elbow'        
+    },
+    {
+        name: 'Plank to Down Dog',
+        video: 'https://youtu.be/czjs8nV2kDk',
+        cues: '- reach long through the arms (pushing yourself away from the ground)'        
+    },
+    {
+        name: 'Lateral Step-up',
+        video: 'https://youtu.be/ooVLgaFE6F4',
+        cues: '- keep body shifted into woking leg - choose a manageable box height that allows you to control yourself down'        
+    },
+    {
+        name: 'Seated Arnold Press',
+        video: 'https://youtu.be/gyaRtQ4-C2A',
+        cues: '- palms face you at the bottom and out at the top'        
+    },
+    {
+        name: 'Suitcase March in Place',
+        video: 'https://youtu.be/B4y8hZCKiFk',
+        cues: '- stay tall and stacked through hips and ribs - exhale to get abs engaged before you start and fight to keep them as you switch legs - the heavier the weight the more challenging'        
+    },
+    {
+        name: 'Assisted Single-leg RDL',
+        video: 'https://youtube.com/shorts/yg3yTd51gNA?feature=share',
+        cues: '- reach hips backwards while keeping back flat and weight close to your body'        
+    },
+    {
+        name: 'Barbell Bent-over Row (pronated)',
+        video: 'https://youtu.be/-nfssCpG9FQ',
+        cues: '- hinge back into hips - back flat - should feel glutes and hamstrings holding you up'        
+    },
+    {
+        name: 'Forearm Plank',
+        video: 'https://youtu.be/moz2IbXbhzk',
+        cues: '- sound on for cues'        
+    },
+    {
+        name: 'Tall Kneeling Alternating Lateral/Front Raise',
+        video: 'https://youtu.be/5Im7DNvfoLo',
+        cues: '- arms go just above shoulder level - alternate reaching forward and lateral'        
+    },
+   
 ]
 
 // new model exerciseGroup containing array of exercise id's for exercises saved, can make another group for week 1, 2. etc
 // nested relationship is one way, save id's inside of group and what they correspond to in the database
 // create form with dropdown to collect id's
+
+Exercise.deleteMany({})
+    .then(() => {
+    return Exercise.insertMany(exercise)
+    })
+    .then((exercise) => {
+    console.log(exercise)
+    })
+    .catch((err) => {
+    console.log(err)
+    })
+    .finally(() => {
+    process.exit()
+})
