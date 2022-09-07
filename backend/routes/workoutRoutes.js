@@ -1,18 +1,11 @@
-const express = require('express');
-
-const {
-    getOneWorkout,
-    getWorkouts,    
-
-} = require('../controllers/workoutController')
+const router = require('express').Router()
+const workoutController = require('../controllers/workoutController')
 
 
-const router = express.Router();
-
-// GET all workouts
-router.get('/', getWorkouts)
+// GET all exercises
+router.get('/', workoutController.index)
 
 // GET a single workout
-router.get('/:id', getOneWorkout)
+router.get('/:id', workoutController.getOneExercise)
 
 module.exports = router;

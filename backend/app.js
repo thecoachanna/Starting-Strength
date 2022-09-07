@@ -3,9 +3,11 @@ require('./db/connection')
 
 const express = require('express')
 const app = express()
-const mongoose = require('mongoose')
+const PORT = 4000
 const cors = require('cors')
 const { MessagingResponse } = require('twilio').twiml;
+
+const workoutRoutes = require('./routes/workoutRoutes')
 
 // Twilio text messaging
 app.post('/sms', (req, res) => {
@@ -15,36 +17,13 @@ app.post('/sms', (req, res) => {
   
     res.type('text/xml').send(twiml.toString());
 });
-  
-
-
-
-// Socket.io
-// const http = require('http');
-// const server = http.createServer(app);
-// const { Server } = require("socket.io");
-
-// const io = new Server(server, {
-//     cors: {
-//         origin: 'http://localhost:3000',
-//         methods: ['GET', 'POST'],
-//     }
-// });
-
-// io.on('connection', (socket) => {
-//     console.log(`User connected: ${socket.id}`);
-
-//     socket.on('send_message', (data) => {
-//         socket.broadcast.emit('receive_message', data)
-//     })
-// })
-
-const workoutRoutes = require('./routes/workoutRoutes')
 
 
 // Middleware
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
@@ -54,15 +33,10 @@ app.use((req, res, next) => {
 app.use('/workouts', workoutRoutes)
 // app.use('/user', userRoutes)
 
+app.get('/', (req, res) => {
+    res.json('Welcome to Starting Stength!')
+})
 
-// connect to DB
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => {
-        // listen for requests once connected to DB
-        app.listen(process.env.PORT, () => {
-            console.log(`Connected to DB + listening on PORT: ${process.env.PORT}`)
-        })
-    })
-    .catch ((error) => {
-        console.log(error)
-    })
+app.listen(PORT, ()=> {
+    console.log(`Listening on PORT: ${PORT}`)
+})

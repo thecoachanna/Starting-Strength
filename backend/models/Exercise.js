@@ -1,9 +1,7 @@
 // allows us to create models and schemas
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema
-
-const exerciseSchema = new Schema({
+const exerciseSchema = new mongoose.Schema({
     name: {
         type: String,
         
@@ -18,4 +16,6 @@ const exerciseSchema = new Schema({
     
 })
 
-module.exports = mongoose.model('Exercise', exerciseSchema);
+const Exercise = mongoose.model('Exercise', exerciseSchema);
+
+module.exports = Exercise
