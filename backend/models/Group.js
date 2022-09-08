@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const workoutSchema = new mongoose.Schema({
-    id: {
+const groupSchema = new mongoose.Schema({
+    exerciseIds: {
         type: [''],
-        
+        // check embedded array sytanx
     },
     name: {
         type: String,
@@ -19,6 +19,6 @@ const workoutSchema = new mongoose.Schema({
     
 })
 
-const Workout = mongoose.model('Workout', workoutSchema);
+const Group = mongoose.model('Group', groupSchema);
 
-module.exports = Workout
+module.exports = Group

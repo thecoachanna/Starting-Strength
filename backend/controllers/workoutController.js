@@ -1,9 +1,7 @@
 const Exercise = require('../models/Exercise')
-const mongoose = require('mongoose');
 
 
 // GET all exercises
-
 const index = (req, res) => {
     Exercise.find({}, (err, exercise)=>{
         if(err){

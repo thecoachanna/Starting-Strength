@@ -34,9 +34,9 @@ app.use((req, res, next) => {
 app.use('/workouts', workoutRoutes)
 // app.use('/user', userRoutes)
 
-app.get('/', (req, res) => {
-    res.json('Welcome to Starting Stength!')
-})
+// app.get('/', (req, res) => {
+//     res.json('Welcome to Starting Strength!')
+// })
 
 
 app.listen(PORT, ()=> {
