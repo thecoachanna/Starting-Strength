@@ -6,6 +6,7 @@ import "./index.css";
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import TrainingTips from "./pages/TrainingTips";
+import NewWorkout from './pages/NewWorkout';
 
 function App() {
   const [ exercises, setExercises  ] = useState([])
@@ -24,6 +25,7 @@ function App() {
         <Navbar />
             <Routes>
               <Route path='/workouts' element={<Home exercises={exercises} />} />
+              <Route path='/workouts/new' element={ <NewWorkout />} />
               <Route path='/workouts/trainingtips' element={ <TrainingTips />} />
             </Routes>
       

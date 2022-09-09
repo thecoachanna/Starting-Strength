@@ -1,17 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Exercise = ({ exercises }) => {
-  console.log(exercises)
+  console.log(exercises);
 
   return (
-    <div>
-      <h4>{exercises[0].name}</h4>
-      <h1>Hello</h1>
-      <p>{exercises[0].cues}</p>
-      <video width="320" height="240" controls>
-        <source src={exercises[0].video} type="video/mp4"></source>
-      </video>
-    </div>
+    <Fragment>      
+      {exercises.map((exercise) => {
+        return (
+          <div key={exercise.id}>
+            <h4>{exercise?.name}</h4>
+            <p>{exercise?.cues}</p>
+            <iframe width="450" height="250" src={exercise.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        );
+      })}
+    </Fragment>
   );
 };
 
