@@ -2,20 +2,15 @@ const mongoose = require('mongoose');
 
 const groupSchema = new mongoose.Schema({
     exerciseIds: {
-        type: [''],
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Exercise'
+        }],
         // check embedded array sytanx
     },
     name: {
         type: String,
-        
-    },
-    video: {
-        type: String,
-        
-    },   
-    cues: {
-        type: String,
-    },
+    }
     
 })
 

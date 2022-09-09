@@ -5,6 +5,7 @@ const express = require('express')
 const app = express()
 const PORT = 4000
 const cors = require('cors')
+const bodyParser = require('body-parser')
 const { MessagingResponse } = require('twilio').twiml;
 
 const workoutRoutes = require('./routes/workoutRoutes');
@@ -22,8 +23,10 @@ app.post('/sms', (req, res) => {
 
 // Middleware
 app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+// app.use(express.json())
+// app.use(express.urlencoded({ extended: true }))
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
