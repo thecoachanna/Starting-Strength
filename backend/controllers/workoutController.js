@@ -1,4 +1,5 @@
 const Exercise = require('../models/Exercise')
+const Workout = require('../models/Workouts')
 
 
 // GET all exercises
@@ -40,49 +41,40 @@ const createOneExercise = (req, res) => {
 
 // create workout
 const createWorkout = async (req, res) => {
-    console.log(req.body);    
-    let newWorkout= await Item.create(req.body)
+    // console.log(req.body);
+    
+    let exerciseId = req.body.value   
+       
+    let newWorkout = await Workout.create({ exercises: req.body.selectedExercise, workoutNumber: 2 })
+    console.log(newWorkout)
     res.json(newWorkout)
 }
 
-// create one phase
-const createPhase = (req, res) => {
-    console.log(req.body)
-    Group.create(req.body)
-        .then(response => {
-        res.json(response)
-        })
-        .catch(err => {
-        res.status(500).send(err.message)
+const getWorkout = (req, res) => {
+    Workout.find().populate({ path: 'exercises', populate: {path: 'exercises.exercise', model: 'Workout'}}).then((workout, e) => {
+        res.json(workout)
     })
 }
 
-// const updateWorkout = async (req, res) => {
-//     const { id } = req.params
-
-//     if (!mongoose.Types.ObjectId.isValid(id)) {
-//         return res.status(404).json({ error: 'no such workout' })
-//     }
-
-//     const workout = await Workout.findOneAndUpdate({ _id: id }, {
-//         ...req.body
+// create one phase
+// const createPhase = (req, res) => {
+//     console.log(req.body)
+//     Group.create(req.body)
+//         .then(response => {
+//         res.json(response)
+//         })
+//         .catch(err => {
+//         res.status(500).send(err.message)
 //     })
-
-//     if (!workout) {
-//         return res.status(400).json({error: 'No such workout'})
-//     }
-
-//     res.status(200).json(workout)
 // }
-
-
 
 module.exports = {
     
     index,
     getOneExercise,
-    createOneExercise,
-    createPhase,
+    getWorkout,
+    // createOneExercise,
+    // createPhase,
     createWorkout
     
 }
