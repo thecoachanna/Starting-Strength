@@ -19,6 +19,9 @@ const TrainingTips = () => {
  
   return (
     <Fragment>
+      <div>
+        <h1>Training Tips</h1>
+      </div>
       <Accordion open={open === 1} animate={customAnimation}>
         <AccordionHeader onClick={() => handleOpen(1)}>
           What is Material Tailwind?
