@@ -45,13 +45,13 @@ const createWorkout = async (req, res) => {
     
     let exerciseId = req.body.value   
        
-    let newWorkout = await Workout.create({ exercises: req.body.selectedExercise, workoutNumber: 2 })
+    let newWorkout = await Workout.create({ exercises: req.body.selectedExercise, workoutNumber: req.body.workoutNumber })
     console.log(newWorkout)
     res.json(newWorkout)
 }
 
 const getWorkout = (req, res) => {
-    Workout.find().populate({ path: 'exercises', populate: {path: 'exercises.exercise', model: 'Workout'}}).then((workout, e) => {
+    Workout.find().populate({ path: 'exercises.exercise', model: 'Exercise'}).then((workout, e) => {
         res.json(workout)
     })
 }
